@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>HAIP @ CUI 2026 | Human-Agent Identities & Privacy</title>
+  <meta name="description" content="HAIP (Human-Agent Identities & Privacy) workshop at CUI 2026. Privacy-centered research agenda for conversational and agentic systems." />
+  <style>
+    :root{
+      --bg:#0b1220;
+      --panel:#101a2e;
+      --text:#e6edf7;
+      --muted:#a9b6cc;
+      --accent:#38bdf8;
+      --border:#23324f;
+      --chip:#152243;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      background:var(--bg);
+      color:var(--text);
+      line-height:1.65;
+    }
+    a{color:var(--accent); text-decoration:none}
+    a:hover{text-decoration:underline}
+    header{
+      background:linear-gradient(180deg, #0f1b33 0%, var(--bg) 100%);
+      border-bottom:1px solid var(--border);
+      padding:52px 18px 28px;
+      text-align:center;
+    }
+    header h1{margin:0; font-size:2.2rem; letter-spacing:0.2px}
+    header p{margin:10px 0 0; color:var(--muted)}
+    nav{
+      margin:18px auto 0;
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      justify-content:center;
+    }
+    nav a{
+      padding:8px 12px;
+      border:1px solid var(--border);
+      border-radius:999px;
+      background:rgba(16,26,46,0.6);
+      color:var(--text);
+      font-size:0.95rem;
+    }
+    main{max-width:980px; margin:0 auto; padding:22px 18px 60px}
+    section{
+      background:rgba(16,26,46,0.55);
+      border:1px solid var(--border);
+      border-radius:16px;
+      padding:18px 18px 14px;
+      margin:16px 0;
+    }
+    h2{margin:0 0 10px; font-size:1.35rem}
+    .muted{color:var(--muted)}
+    .grid{
+      display:grid;
+      grid-template-columns:1fr;
+      gap:14px;
+    }
+    @media (min-width: 860px){
+      .grid{grid-template-columns: 1fr 1fr;}
+    }
+    .chiprow{display:flex; flex-wrap:wrap; gap:8px; margin-top:10px}
+    .chip{
+      background:var(--chip);
+      border:1px solid var(--border);
+      color:var(--text);
+      padding:6px 10px;
+      border-radius:999px;
+      font-size:0.92rem;
+    }
+    ul{margin:10px 0 12px 20px}
+    footer{
+      border-top:1px solid var(--border);
+      color:var(--muted);
+      padding:18px;
+      text-align:center;
+      font-size:0.92rem;
+    }
+    .callout{
+      padding:12px 12px;
+      border-left:4px solid var(--accent);
+      background:rgba(56,189,248,0.08);
+      border-radius:10px;
+      margin:10px 0 0;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>HAIP @ CUI 2026</h1>
+  <p>Human-Agent Identities & Privacy</p>
+
+  <nav>
+    <a href="#about">About</a>
+    <a href="#cfp">Call for Participation</a>
+    <a href="#dates">Important Dates</a>
+    <a href="#accessibility">Accessibility</a>
+    <a href="#organizers">Organizers</a>
+  </nav>
+</header>
+
+<main>
+  <section id="about">
+    <h2>About the Workshop</h2>
+    <p>
+      The rapid emergence of conversational AI, generative systems, and autonomous agents is reshaping how identities are
+      constructed, inferred, and enacted across human-agent ecosystems. These systems increasingly collect, process, and act
+      upon sensitive personal data, perform behavioral inference, integrate multimodal information, and mediate access to social
+      and institutional resources.
+    </p>
+    <p>
+      HAIP (Human-Agent Identities & Privacy) positions privacy at the center of human-agent interaction. We examine
+      agent-mediated data exposure, identity inference, cross-modal information leakage, secondary data use, and risks to
+      historically understudied and structurally vulnerable populations. Beyond analyzing harms, HAIP also invites
+      <strong>privacy-centered provotypes</strong>: early-stage, design-oriented explorations of how conversational agents can embed
+      contextual integrity, data minimization, identity protection, and structural safeguards from the outset.
+    </p>
+
+    <div class="chiprow">
+      <span class="chip">Privacy-centered human-agent ecosystems</span>
+      <span class="chip">Identity & agency</span>
+      <span class="chip">Multimodal leakage</span>
+      <span class="chip">Secondary data use</span>
+      <span class="chip">Provotypes & design explorations</span>
+    </div>
+  </section>
+
+  <section id="cfp">
+    <h2>Call for Participation</h2>
+    <p>
+      We invite contributions that address identity, agency, and data governance in conversational and agentic systems.
+      Submissions will be lightly reviewed by the organizers to ensure quality, relevance, and diversity of perspectives.
+    </p>
+
+    <div class="grid">
+      <div>
+        <h3 style="margin:0 0 8px">Submission Types</h3>
+        <ul>
+          <li><strong>Short position papers</strong> (2–4 pages)</li>
+          <li><strong>Privacy-centered provotypes</strong> (design-oriented, exploratory contributions)</li>
+        </ul>
+        <p class="muted" style="margin-top:0">
+          Formats are intentionally lightweight to reduce barriers and welcome emerging work.
+        </p>
+      </div>
+
+      <div>
+        <h3 style="margin:0 0 8px">Suggested Themes</h3>
+        <ul>
+          <li>Agent-mediated data exposure and identity inference</li>
+          <li>Cross-modal information leakage (text, voice, vision, sensors)</li>
+          <li>Behavioral inference and sensitive attribute prediction</li>
+          <li>Secondary data use and data governance in agentic workflows</li>
+          <li>Privacy risks for structurally vulnerable or understudied populations</li>
+          <li>Contextual integrity, data minimization, identity protection by design</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="callout">
+      <strong>Note:</strong> This page reflects the HAIP workshop framing and participation model described in the HAIP proposal.
+      Exact formatting instructions (templates, submission portal, page limits enforcement) can be added once CUI 2026 finalizes workshop submission logistics.
+    </div>
+  </section>
+
+  <section id="dates">
+    <h2>Important Dates</h2>
+    <p class="muted">
+      Dates are currently listed as TBD in the HAIP proposal materials. Replace these placeholders once CUI 2026 announces the workshop timeline.
+    </p>
+    <ul>
+      <li><strong>Submission deadline:</strong> TBD</li>
+      <li><strong>Notification:</strong> TBD</li>
+      <li><strong>Workshop date:</strong> TBD (co-located with CUI 2026)</li>
+    </ul>
+  </section>
+
+  <section id="accessibility">
+    <h2>Accessibility & Inclusion</h2>
+    <p>
+      HAIP is committed to fostering an accessible, respectful, and inclusive environment. Workshop materials and communications
+      will follow accessibility best practices, including accessible PDFs, alt text for images, and clear language.
+    </p>
+    <ul>
+      <li>Slides and presentations will follow accessibility guidelines (readable fonts, sufficient contrast).</li>
+      <li>Where feasible, we encourage live captioning and written summaries of breakout discussions.</li>
+      <li>Multiple participation modes: structured talks, moderated discussion, small-group breakouts, and written contributions.</li>
+      <li>The workshop adheres to ACM and SIGCHI Codes of Conduct with active facilitation to ensure equitable participation.</li>
+    </ul>
+  </section>
+
+  <section id="organizers">
+    <h2>Organizers</h2>
+    <p class="muted">Organizer list and bios based on the HAIP proposal draft.</p>
+
+    <ul>
+      <li><strong>Sanchari Das</strong> (George Mason University, USA)</li>
+      <li><strong>Rahat Masood</strong> (University of New South Wales, UNSW Sydney, Australia)</li>
+      <li><strong>Dakuo Wang</strong> (Northeastern University, USA)</li>
+      <li><strong>Filipo Sharevski</strong> (DePaul University, USA)</li>
+      <li><strong>Salil Kanhere</strong> (University of New South Wales, UNSW Sydney, Australia)</li>
+    </ul>
+
+    <h3 style="margin:12px 0 6px">Selected Bios</h3>
+    <p>
+      <strong>Sanchari Das</strong> is an Assistant Professor in the Information Sciences and Technology Department at George Mason University,
+      leading research at the intersection of usable security, privacy, and human-centered AI, with a focus on privacy harms and sociotechnical risks
+      in emerging technologies including conversational systems and generative AI.
+    </p>
+    <p>
+      <strong>Salil Kanhere</strong> is a Professor at UNSW Sydney and leads an Information Security and Privacy research group, working at the intersection
+      of networked systems, cybersecurity, and artificial intelligence.
+    </p>
+    <p class="muted">
+      (Additional organizer bios can be added here if/when provided in finalized materials.)
+    </p>
+  </section>
+</main>
+
+<footer>
+  © HAIP Workshop (CUI 2026) · Human-Agent Identities & Privacy
+</footer>
+
+</body>
+</html>
