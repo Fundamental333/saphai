@@ -4,398 +4,354 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>SAPH-AI | Security, Agency, Privacy of Human-AI</title>
-  <meta name="description" content="SAPH-AI (Security, Agency, Privacy of Human-AI) workshop website. A workshop on privacy, security, agency, identity, and governance in human-AI ecosystems." />
-  <meta name="theme-color" content="#f6e8ea" />
+  <meta name="description" content="SAPH-AI workshop at ACM CUI 2026 on security, agency, privacy, identity, and governance in human-AI ecosystems." />
+  <meta name="theme-color" content="#f7f4f5" />
 
   <style>
     :root{
-      --bg: #ffffff;
-      --bg2:#fbf6f7;
-      --text:#15151a;
-      --muted:#4b4b57;
-      --subtle:#6a6a78;
-
+      --bg:#fcfbfb;
+      --surface:#ffffff;
+      --surface-soft:#f8f4f5;
+      --text:#1a1a1f;
+      --muted:#5d606b;
       --brand:#7a0f1a;
-      --brand2:#a02a33;
-      --blush:#f6e8ea;
-      --card:#ffffff;
-
-      --border: rgba(20,20,30,.12);
-      --shadow: 0 16px 40px rgba(20,20,30,.08);
-
-      --radius: 16px;
-      --radius2: 22px;
-      --max: 1100px;
+      --brand-soft:#f4e6e8;
+      --border:rgba(20,20,30,.10);
+      --shadow:0 12px 32px rgba(20,20,30,.06);
+      --max:1080px;
+      --radius:16px;
     }
 
-    *{ box-sizing:border-box; }
-    html{ scroll-behavior:smooth; }
-
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
     body{
       margin:0;
       font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
-      color: var(--text);
-      background:
-        radial-gradient(900px 650px at 20% -20%, rgba(160,42,51,.10), transparent 60%),
-        radial-gradient(900px 650px at 90% 0%, rgba(122,15,26,.08), transparent 55%),
-        linear-gradient(180deg, var(--bg2), var(--bg));
+      background: linear-gradient(180deg, #fbf7f8 0%, #ffffff 220px);
+      color:var(--text);
       line-height:1.65;
     }
 
-    a{ color: var(--brand); text-decoration: none; }
-    a:hover{ text-decoration: underline; text-underline-offset: 4px; }
+    a{color:var(--brand); text-decoration:none}
+    a:hover{text-decoration:underline; text-underline-offset:4px}
 
     .container{
-      max-width: var(--max);
-      margin: 0 auto;
-      padding: 0 18px;
+      max-width:var(--max);
+      margin:0 auto;
+      padding:0 20px;
     }
 
     .topbar{
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      background: rgba(246,232,234,.92);
-      backdrop-filter: blur(10px);
-      border-bottom: 1px solid var(--border);
+      position:sticky;
+      top:0;
+      z-index:100;
+      background:rgba(255,255,255,.92);
+      backdrop-filter:blur(10px);
+      border-bottom:1px solid var(--border);
     }
 
     .topbar-inner{
       display:flex;
       align-items:center;
       justify-content:space-between;
-      gap: 12px;
-      padding: 12px 0;
+      gap:16px;
+      padding:14px 0;
     }
 
     .brand{
       display:flex;
       align-items:center;
       gap:10px;
-      font-weight: 800;
-      letter-spacing: .2px;
-      color: var(--brand);
-      white-space: nowrap;
+      font-weight:800;
+      color:var(--brand);
+      letter-spacing:.2px;
+      white-space:nowrap;
     }
 
     .logo{
-      width: 34px;
-      height: 34px;
-      border-radius: 10px;
-      background:
-        radial-gradient(12px 12px at 30% 30%, rgba(255,255,255,.7), transparent 55%),
-        linear-gradient(135deg, var(--brand), var(--brand2));
-      box-shadow: 0 10px 18px rgba(122,15,26,.18);
-      border: 1px solid rgba(122,15,26,.25);
+      width:34px;
+      height:34px;
+      border-radius:10px;
+      background:linear-gradient(135deg, #7a0f1a, #a7303b);
+      box-shadow:0 8px 18px rgba(122,15,26,.18);
     }
 
     .nav{
       display:flex;
-      gap: 6px;
-      flex-wrap: wrap;
+      flex-wrap:wrap;
+      gap:6px;
       justify-content:flex-end;
     }
 
     .nav a{
-      padding: 8px 10px;
-      border-radius: 999px;
-      border: 1px solid transparent;
-      color: rgba(21,21,26,.78);
-      font-size: .94rem;
+      color:#4f525d;
+      padding:8px 10px;
+      border-radius:999px;
+      font-size:.95rem;
     }
 
     .nav a:hover{
-      color: var(--brand);
-      border-color: rgba(122,15,26,.25);
-      background: rgba(255,255,255,.55);
-      text-decoration: none;
+      background:var(--brand-soft);
+      color:var(--brand);
+      text-decoration:none;
     }
 
     .hero{
-      padding: 42px 0 18px;
+      padding:44px 0 20px;
     }
 
-    .hero-card{
-      border: 1px solid var(--border);
-      background: linear-gradient(180deg, rgba(255,255,255,.95), rgba(255,255,255,.84));
-      border-radius: var(--radius2);
-      box-shadow: var(--shadow);
-      overflow:hidden;
-      position: relative;
-      padding: 28px;
+    .hero-box{
+      background:var(--surface);
+      border:1px solid var(--border);
+      border-radius:22px;
+      box-shadow:var(--shadow);
+      padding:30px;
     }
 
-    .hero-card:before{
-      content:"";
-      position:absolute;
-      inset: -1px;
-      background:
-        radial-gradient(700px 160px at 20% 0%, rgba(122,15,26,.12), transparent 60%),
-        radial-gradient(700px 160px at 80% 0%, rgba(160,42,51,.10), transparent 60%);
-      opacity:.9;
-      pointer-events:none;
-      mask: linear-gradient(#000, transparent 72%);
-    }
-
-    .kicker{
-      display:inline-flex;
-      gap:8px;
-      align-items:center;
-      padding: 7px 10px;
-      border-radius: 999px;
-      border: 1px solid rgba(122,15,26,.18);
-      background: rgba(246,232,234,.75);
-      color: rgba(21,21,26,.85);
-      font-size: .92rem;
-      position: relative;
-      z-index: 1;
-    }
-
-    .dot{
-      width:8px;
-      height:8px;
+    .eyebrow{
+      display:inline-block;
+      background:var(--brand-soft);
+      border:1px solid rgba(122,15,26,.16);
+      color:var(--brand);
+      padding:7px 12px;
       border-radius:999px;
-      background: var(--brand);
-      box-shadow: 0 0 0 4px rgba(122,15,26,.12);
+      font-weight:700;
+      font-size:.9rem;
+      margin-bottom:16px;
     }
 
     h1{
-      margin: 14px 0 12px;
-      font-size: clamp(2rem, 3.4vw, 2.95rem);
-      line-height:1.12;
+      margin:0 0 12px;
+      font-size:clamp(2rem, 4vw, 3rem);
+      line-height:1.1;
       letter-spacing:-.4px;
-      color: var(--brand);
-      position: relative;
-      z-index: 1;
+      color:var(--brand);
     }
 
     .subtitle{
-      margin: 0 0 16px;
-      color: rgba(21,21,26,.82);
-      font-size: 1.05rem;
-      position: relative;
-      z-index: 1;
-      max-width: 75ch;
+      font-size:1.05rem;
+      color:#30323a;
+      max-width:78ch;
+      margin:0 0 20px;
     }
 
-    .cta-row{
-      display:flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-top: 14px;
-      position: relative;
-      z-index: 1;
+    .hero-meta{
+      display:grid;
+      grid-template-columns:repeat(3, minmax(0,1fr));
+      gap:12px;
+      margin-top:20px;
     }
 
-    .btn{
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      padding: 11px 14px;
-      border-radius: 12px;
-      border: 1px solid rgba(122,15,26,.20);
-      background: rgba(255,255,255,.70);
-      color: rgba(21,21,26,.92);
-      font-weight: 700;
-      text-decoration:none;
+    .meta-card{
+      background:var(--surface-soft);
+      border:1px solid var(--border);
+      border-radius:14px;
+      padding:14px;
     }
 
-    .btn:hover{
-      text-decoration:none;
-      background: rgba(246,232,234,.75);
-      border-color: rgba(122,15,26,.32);
+    .meta-label{
+      font-size:.84rem;
+      text-transform:uppercase;
+      letter-spacing:.04em;
+      color:var(--muted);
+      margin-bottom:4px;
     }
 
-    .btn.primary{
-      border-color: rgba(122,15,26,.45);
-      background: linear-gradient(135deg, rgba(122,15,26,.10), rgba(160,42,51,.10));
-      color: var(--brand);
+    .meta-value{
+      font-weight:800;
+      color:var(--text);
     }
 
     .section{
-      margin: 16px 0;
+      padding:12px 0;
     }
 
     .card{
-      border: 1px solid var(--border);
-      background: rgba(255,255,255,.92);
-      border-radius: var(--radius);
-      padding: 22px;
-      box-shadow: 0 10px 25px rgba(20,20,30,.05);
+      background:var(--surface);
+      border:1px solid var(--border);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+      padding:24px;
     }
 
-    .card h2{
+    h2{
       margin:0 0 10px;
-      font-size: 1.4rem;
-      letter-spacing: -.2px;
-      color: var(--brand);
+      font-size:1.45rem;
+      color:var(--brand);
+      letter-spacing:-.2px;
     }
 
-    .card h3{
-      margin: 18px 0 8px;
-      color: var(--brand);
-      font-size: 1.06rem;
+    h3{
+      margin:18px 0 8px;
+      font-size:1.06rem;
+      color:var(--brand);
     }
 
     .lead{
-      color: rgba(21,21,26,.80);
-      margin: 0 0 12px;
+      margin:0 0 12px;
+      color:#3a3d46;
     }
 
-    .grid2{
+    .grid-2{
       display:grid;
-      grid-template-columns: 1fr;
-      gap: 14px;
+      grid-template-columns:1fr 1fr;
+      gap:16px;
     }
-
-    @media (min-width: 900px){
-      .grid2{ grid-template-columns: 1fr 1fr; }
-    }
-
-    ul{
-      margin: 10px 0 0 18px;
-      color: rgba(21,21,26,.84);
-    }
-
-    li{ margin: 6px 0; }
 
     .dates{
       display:grid;
-      gap: 10px;
-      margin-top: 12px;
+      gap:10px;
+      margin-top:10px;
     }
 
     .date-row{
       display:flex;
       justify-content:space-between;
-      gap: 12px;
-      padding: 12px 14px;
-      border-radius: 14px;
-      border: 1px solid rgba(122,15,26,.16);
-      background: rgba(246,232,234,.55);
-      flex-wrap: wrap;
+      gap:16px;
+      flex-wrap:wrap;
+      padding:12px 14px;
+      border-radius:12px;
+      background:var(--surface-soft);
+      border:1px solid var(--border);
     }
 
-    .date-label{
-      font-weight: 700;
-      color: rgba(21,21,26,.9);
+    .date-name{
+      font-weight:700;
     }
 
     .date-value{
-      color: var(--brand);
-      font-weight: 800;
+      color:var(--brand);
+      font-weight:800;
+    }
+
+    ul{
+      margin:10px 0 0 20px;
+      padding:0;
+    }
+
+    li{
+      margin:6px 0;
     }
 
     .note{
-      margin-top: 14px;
-      padding: 12px 14px;
-      border-radius: 14px;
-      border: 1px solid rgba(122,15,26,.22);
-      background: rgba(246,232,234,.70);
-      color: rgba(21,21,26,.86);
+      margin-top:14px;
+      padding:12px 14px;
+      border-left:4px solid var(--brand);
+      background:#faf3f4;
+      border-radius:10px;
+      color:#393b43;
     }
 
     .people{
       display:grid;
-      grid-template-columns: 1fr;
-      gap: 12px;
-      margin-top: 12px;
-    }
-
-    @media (min-width: 900px){
-      .people{ grid-template-columns: 1fr 1fr; }
+      grid-template-columns:1fr 1fr;
+      gap:14px;
+      margin-top:12px;
     }
 
     .person{
-      padding: 14px;
-      border-radius: 16px;
-      border: 1px solid rgba(122,15,26,.14);
-      background: rgba(255,255,255,.88);
+      border:1px solid var(--border);
+      background:var(--surface-soft);
+      border-radius:14px;
+      padding:14px;
     }
 
-    .person .name{
+    .person-top{
       display:flex;
-      align-items:flex-start;
       justify-content:space-between;
-      gap: 10px;
-      margin-bottom: 6px;
-      flex-wrap: wrap;
+      gap:10px;
+      flex-wrap:wrap;
+      margin-bottom:6px;
     }
 
     .tag{
-      font-size: .84rem;
-      color: rgba(21,21,26,.78);
-      padding: 5px 9px;
-      border-radius: 999px;
-      border: 1px solid rgba(122,15,26,.18);
-      background: rgba(246,232,234,.65);
-      white-space: nowrap;
-      font-weight: 700;
-    }
-
-    .person p{
-      margin: 6px 0 0;
-      color: rgba(21,21,26,.78);
+      font-size:.82rem;
+      background:#fff;
+      border:1px solid var(--border);
+      border-radius:999px;
+      padding:5px 9px;
+      color:var(--muted);
+      font-weight:700;
+      white-space:nowrap;
     }
 
     footer{
-      margin-top: 28px;
-      padding: 22px 0 36px;
-      color: rgba(21,21,26,.70);
-      border-top: 1px solid var(--border);
-      background: rgba(246,232,234,.55);
+      margin-top:26px;
+      padding:22px 0 40px;
+      border-top:1px solid var(--border);
+      color:var(--muted);
     }
 
-    .footer-links{
+    .footer-row{
       display:flex;
       flex-wrap:wrap;
       gap:14px;
-      margin-top:8px;
     }
 
-    .small{
-      font-size: .95rem;
-      color: rgba(21,21,26,.70);
+    @media (max-width: 860px){
+      .hero-meta,
+      .grid-2,
+      .people{
+        grid-template-columns:1fr;
+      }
+
+      .topbar-inner{
+        flex-direction:column;
+        align-items:flex-start;
+      }
+
+      .nav{
+        justify-content:flex-start;
+      }
     }
   </style>
 </head>
-
 <body>
-  <div class="topbar">
+  <header class="topbar">
     <div class="container topbar-inner">
       <div class="brand">
         <div class="logo" aria-hidden="true"></div>
         <div>SAPH-AI</div>
       </div>
 
-      <nav class="nav" aria-label="Primary navigation">
+      <nav class="nav" aria-label="Primary">
         <a href="#about">About</a>
         <a href="#dates">Important Dates</a>
-        <a href="#cfp">Call for Participation</a>
-        <a href="#format">Workshop Format</a>
+        <a href="#topics">Topics</a>
+        <a href="#participation">Participation</a>
+        <a href="#format">Format</a>
         <a href="#organizers">Organizers</a>
         <a href="#accessibility">Accessibility</a>
       </nav>
     </div>
-  </div>
+  </header>
 
   <main class="container">
     <section class="hero">
-      <div class="hero-card">
-        <div class="kicker"><span class="dot"></span> Workshop at CUI 2026 · Location TBA</div>
+      <div class="hero-box">
+        <div class="eyebrow">Workshop at ACM CUI 2026</div>
         <h1>SAPH-AI: Security, Agency, Privacy of Human-AI</h1>
         <p class="subtitle">
-          SAPH-AI is a workshop on privacy, security, agency, identity, and governance in human-AI ecosystems, with a focus on conversational AI, generative systems, and agentic technologies.
+          SAPH-AI is an interdisciplinary workshop on privacy, security, agency, identity, and governance in human-AI ecosystems, with a focus on conversational AI, generative systems, and agentic technologies.
         </p>
 
-        <div class="cta-row">
-          <a class="btn primary" href="#about">About the Workshop</a>
-          <a class="btn" href="#cfp">Call for Participation</a>
-          <a class="btn" href="#organizers">Organizers</a>
+        <div class="hero-meta">
+          <div class="meta-card">
+            <div class="meta-label">Conference</div>
+            <div class="meta-value">ACM CUI 2026</div>
+          </div>
+          <div class="meta-card">
+            <div class="meta-label">Conference Dates</div>
+            <div class="meta-value">July 21-24, 2026</div>
+          </div>
+          <div class="meta-card">
+            <div class="meta-label">Location</div>
+            <div class="meta-value">Bremen, Germany</div>
+          </div>
         </div>
 
         <div class="note">
-          Additional workshop details, final deadlines, and submission information will be announced soon.
+          The conference venue and conference dates are fixed. Individual workshop deadlines and the exact workshop day will be announced separately.
         </div>
       </div>
     </section>
@@ -407,13 +363,10 @@
           SAPH-AI brings together researchers and practitioners interested in how security, agency, and privacy jointly shape human-AI interaction.
         </p>
         <p>
-          Conversational AI, generative systems, and autonomous agents are increasingly embedded in everyday communication, decision making, and digital infrastructure. These systems process sensitive data, construct behavioral profiles, and may act on behalf of users across platforms and contexts.
+          Conversational AI, generative systems, and autonomous agents increasingly process sensitive data, build persistent user representations, and act on behalf of users across tools, platforms, and institutional contexts.
         </p>
         <p>
-          This workshop examines security, agency, and privacy as interconnected foundations of human-AI ecosystems. Topics include privacy risks, identity inference, multimodal data leakage, delegated authority, transparency, accountability, and privacy-centered design for conversational and agentic systems.
-        </p>
-        <p>
-          SAPH-AI aims to create an interdisciplinary forum for discussion across HCI, security, privacy, AI systems, social computing, and governance.
+          The workshop examines these systems through the connected lenses of privacy, security, identity, and governance. It aims to support interdisciplinary discussion across HCI, security, privacy, AI systems, social computing, and policy.
         </p>
       </div>
     </section>
@@ -421,55 +374,91 @@
     <section id="dates" class="section">
       <div class="card">
         <h2>Important Dates</h2>
-        <div class="dates">
-          <div class="date-row">
-            <span class="date-label">Submission Deadline</span>
-            <span class="date-value">TBD</span>
+        <div class="grid-2">
+          <div>
+            <h3>Conference Information</h3>
+            <div class="dates">
+              <div class="date-row">
+                <span class="date-name">Conference</span>
+                <span class="date-value">ACM CUI 2026</span>
+              </div>
+              <div class="date-row">
+                <span class="date-name">Conference Dates</span>
+                <span class="date-value">July 21-24, 2026</span>
+              </div>
+              <div class="date-row">
+                <span class="date-name">Venue</span>
+                <span class="date-value">Bremen, Germany</span>
+              </div>
+            </div>
           </div>
-          <div class="date-row">
-            <span class="date-label">Notification to Authors</span>
-            <span class="date-value">TBD</span>
-          </div>
-          <div class="date-row">
-            <span class="date-label">Camera-Ready Deadline</span>
-            <span class="date-value">TBD</span>
-          </div>
-          <div class="date-row">
-            <span class="date-label">Workshop Date</span>
-            <span class="date-value">TBA</span>
-          </div>
-          <div class="date-row">
-            <span class="date-label">Venue</span>
-            <span class="date-value">TBA</span>
+
+          <div>
+            <h3>Workshop Timeline</h3>
+            <div class="dates">
+              <div class="date-row">
+                <span class="date-name">Submission Deadline</span>
+                <span class="date-value">TBD</span>
+              </div>
+              <div class="date-row">
+                <span class="date-name">Notification to Authors</span>
+                <span class="date-value">TBD</span>
+              </div>
+              <div class="date-row">
+                <span class="date-name">Camera-Ready Deadline</span>
+                <span class="date-value">TBD</span>
+              </div>
+              <div class="date-row">
+                <span class="date-name">Workshop Day</span>
+                <span class="date-value">TBA</span>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
-    <section id="cfp" class="section">
+    <section id="topics" class="section">
+      <div class="card">
+        <h2>Topics of Interest</h2>
+        <p class="lead">
+          We welcome work on privacy, security, agency, identity, and governance in conversational and agentic AI systems.
+        </p>
+        <ul>
+          <li>Privacy and security risks in conversational and agentic AI</li>
+          <li>Identity inference, behavioral profiling, and persistent memory</li>
+          <li>Multimodal leakage and cross-platform data exposure</li>
+          <li>Delegated decision making, user autonomy, and agency</li>
+          <li>Transparency, auditability, accountability, and governance</li>
+          <li>Privacy-centered design and safeguards for AI assistants and autonomous systems</li>
+          <li>Human-centered evaluations of AI copilots, chatbots, and agentic systems</li>
+          <li>Impacts on vulnerable or historically marginalized populations</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="participation" class="section">
       <div class="card">
         <h2>Call for Participation</h2>
         <p class="lead">
-          We invite submissions and participation from researchers and practitioners working on privacy, security, agency, identity, and governance in human-AI systems.
+          SAPH-AI invites participation from researchers and practitioners across HCI, privacy, security, AI systems, design, and governance.
         </p>
 
-        <h3>Topics of Interest</h3>
+        <h3>Submissions</h3>
+        <p>
+          Submission details, formatting requirements, and page limits will be announced once the workshop timeline is finalized.
+        </p>
+
+        <h3>What We Welcome</h3>
         <ul>
-          <li>Privacy and security risks in conversational and agentic AI</li>
-          <li>Identity inference, behavioral profiling, and multimodal leakage</li>
-          <li>Delegated decision making, user agency, and autonomy</li>
-          <li>Transparency, accountability, and governance of AI systems</li>
-          <li>Privacy-centered design, auditing, and safeguards for agentic systems</li>
-          <li>Human-centered evaluations of AI assistants, copilots, and autonomous agents</li>
+          <li>Research papers and position papers</li>
+          <li>Early-stage ideas and design provocations</li>
+          <li>Privacy-centered prototypes for human-AI systems</li>
+          <li>Empirical, technical, design, or policy perspectives</li>
         </ul>
 
-        <h3>Submission Information</h3>
-        <p>
-          Submission format, page limits, and review details will be announced soon.
-        </p>
-
         <div class="note">
-          We welcome interdisciplinary work spanning technical, empirical, design, and policy perspectives.
+          The workshop is intended as an interdisciplinary forum for emerging ideas, constructive discussion, and community building around human-AI ecosystems.
         </div>
       </div>
     </section>
@@ -478,13 +467,15 @@
       <div class="card">
         <h2>Workshop Format</h2>
         <p class="lead">
-          SAPH-AI is planned as an interactive workshop combining presentations, discussion, and collaborative exchange.
+          SAPH-AI is planned as a full-day interactive workshop.
         </p>
         <ul>
-          <li>Invited keynote or spotlight talk</li>
-          <li>Research paper and position paper presentations</li>
-          <li>Discussion sessions on emerging challenges in human-AI ecosystems</li>
-          <li>Collaborative exchange across security, privacy, HCI, and AI communities</li>
+          <li>Welcome and framing session</li>
+          <li>Invited keynote</li>
+          <li>Paper and position paper presentations</li>
+          <li>Prototype and design discussion</li>
+          <li>Collaborative breakout sessions</li>
+          <li>Closing synthesis and research agenda building</li>
         </ul>
       </div>
     </section>
@@ -494,63 +485,51 @@
         <h2>Organizers</h2>
         <div class="people">
           <div class="person">
-            <div class="name">
+            <div class="person-top">
               <strong>Sanchari Das</strong>
               <span class="tag">George Mason University</span>
             </div>
-            <p>
-              Assistant Professor in the Information Sciences and Technology Department at George Mason University. She leads the Data Agency &amp; Security Lab and works at the intersection of usable security, privacy, and human-centered AI.
-            </p>
+            <div>Assistant Professor in Information Sciences and Technology at George Mason University, working at the intersection of usable security, privacy, and human-centered AI.</div>
           </div>
 
           <div class="person">
-            <div class="name">
+            <div class="person-top">
               <strong>Rahat Masood</strong>
               <span class="tag">UNSW Sydney</span>
             </div>
-            <p>
-              Senior Lecturer in the School of Computer Science and Engineering at UNSW Sydney. Her research focuses on privacy, security, and responsible AI.
-            </p>
+            <div>Senior Lecturer in Computer Science and Engineering at UNSW Sydney, with research in privacy, security, and responsible AI.</div>
           </div>
 
           <div class="person">
-            <div class="name">
+            <div class="person-top">
               <strong>Siddharth Das Sarkar</strong>
               <span class="tag">George Mason University</span>
             </div>
-            <p>
-              Incoming PhD student in Information Science and Technology at George Mason University. His interests include applied AI, cybersecurity, authentication systems, identity, and secure AI-driven infrastructures.
-            </p>
+            <div>Incoming PhD student in Information Science and Technology at George Mason University, with interests in applied AI, cybersecurity, authentication, and secure AI systems.</div>
           </div>
 
           <div class="person">
-            <div class="name">
+            <div class="person-top">
               <strong>Dakuo Wang</strong>
               <span class="tag">Northeastern University</span>
             </div>
-            <p>
-              Associate Professor at Northeastern University working at the intersection of human-computer interaction and artificial intelligence.
-            </p>
+            <div>Associate Professor at Northeastern University working at the intersection of human-computer interaction and artificial intelligence.</div>
           </div>
 
           <div class="person">
-            <div class="name">
+            <div class="person-top">
               <strong>Filipo Sharevski</strong>
               <span class="tag">DePaul University</span>
             </div>
-            <p>
-              Associate Professor of human-centered cybersecurity at DePaul University. His work focuses on usable security, misinformation, accessibility, and equitable cybersecurity education.
-            </p>
+            <div>Associate Professor of human-centered cybersecurity at DePaul University, focusing on usable security, misinformation, accessibility, and inclusive cybersecurity.</div>
           </div>
 
           <div class="person">
-            <div class="name">
+            <div class="person-top">
               <strong>Salil Kanhere</strong>
               <span class="tag">UNSW Sydney</span>
             </div>
-            <p>
-              Full Professor in the School of Computer Science and Engineering at UNSW Sydney, with research spanning networked systems, cybersecurity, and artificial intelligence.
-            </p>
+            <div>Professor at UNSW Sydney working at the intersection of networked systems, cybersecurity, and artificial intelligence.</div>
           </div>
         </div>
       </div>
@@ -560,19 +539,16 @@
       <div class="card">
         <h2>Accessibility and Inclusion</h2>
         <p>
-          SAPH-AI is committed to fostering an inclusive and accessible workshop environment. Additional information on accessibility, participation formats, and logistics will be shared as details are finalized.
+          SAPH-AI is committed to an accessible, respectful, and inclusive workshop environment. Additional information on accessibility, participation formats, and logistics will be shared with the final workshop announcement.
         </p>
       </div>
     </section>
 
     <footer>
-      <div class="container">
-        © SAPH-AI · Security, Agency, Privacy of Human-AI
-        <div class="footer-links">
-          <span class="small">Workshop website</span>
-          <span class="small">CUI 2026</span>
-          <span class="small">Details forthcoming</span>
-        </div>
+      <div class="footer-row">
+        <span>© SAPH-AI</span>
+        <span>ACM CUI 2026</span>
+        <span>Bremen, Germany</span>
       </div>
     </footer>
   </main>
