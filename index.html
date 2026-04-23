@@ -100,24 +100,11 @@
     }
 
     .brand{
-      display:flex;
-      align-items:center;
-      gap:10px;
       font-weight:800;
       letter-spacing:.2px;
       color:var(--brand);
       white-space:nowrap;
-    }
-
-    .mini-logo{
-      width:34px;
-      height:34px;
-      border-radius:10px;
-      background:
-        radial-gradient(12px 12px at 30% 30%, rgba(255,255,255,.7), transparent 55%),
-        linear-gradient(135deg, var(--brand), var(--brand-2));
-      box-shadow:0 8px 16px rgba(122,15,26,.16);
-      border:1px solid rgba(122,15,26,.25);
+      font-size:1.05rem;
     }
 
     .nav{
@@ -151,42 +138,25 @@
       border:1px solid var(--border);
       border-radius:var(--radius-lg);
       box-shadow:var(--shadow);
-      padding:28px;
+      padding:38px 42px;
     }
 
-    .hero-grid{
-      display:grid;
-      grid-template-columns:250px 1fr;
-      gap:28px;
-      align-items:center;
-    }
-
-    .hero-logo-area{
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      min-height:220px;
-    }
-
-    .hero-logo{
-      max-width:220px;
-      max-height:220px;
-      width:auto;
-      height:auto;
-      object-fit:contain;
+    .hero-content{
+      max-width:900px;
+      margin:0 auto;
     }
 
     .hero-text h1{
       margin:0 0 12px;
-      font-size:clamp(2rem, 4vw, 3.2rem);
-      line-height:1.08;
-      letter-spacing:-.4px;
+      font-size:clamp(2.4rem, 4vw, 4rem);
+      line-height:1.05;
+      letter-spacing:-.5px;
       color:var(--brand);
     }
 
     .hero-text .tagline{
-      margin:0 0 10px;
-      font-size:1.2rem;
+      margin:0 0 14px;
+      font-size:1.15rem;
       color:rgba(21,21,26,.84);
       font-weight:700;
     }
@@ -195,23 +165,23 @@
       margin:0;
       font-size:1rem;
       color:rgba(21,21,26,.82);
-      max-width:74ch;
+      max-width:780px;
     }
 
     .hero-meta{
       display:flex;
       flex-wrap:wrap;
-      gap:10px;
-      margin-top:18px;
+      gap:12px;
+      margin-top:24px;
     }
 
     .pill{
-      padding:8px 12px;
+      padding:9px 16px;
       border-radius:999px;
       border:1px solid rgba(122,15,26,.18);
-      background:rgba(255,255,255,.62);
+      background:rgba(255,255,255,.68);
       color:rgba(21,21,26,.86);
-      font-size:.92rem;
+      font-size:.95rem;
       font-weight:700;
     }
 
@@ -414,14 +384,6 @@
         grid-template-columns:1fr;
       }
 
-      .hero-grid{
-        grid-template-columns:1fr;
-      }
-
-      .hero-logo-area{
-        min-height:auto;
-      }
-
       .schedule-item{
         grid-template-columns:1fr;
       }
@@ -434,6 +396,14 @@
 
       .nav{
         justify-content:flex-start;
+      }
+
+      .hero-banner{
+        padding:28px 22px;
+      }
+
+      .hero-meta{
+        gap:10px;
       }
     }
   </style>
@@ -448,10 +418,7 @@
 
   <div class="topbar">
     <div class="container topbar-inner">
-      <div class="brand">
-        <div class="mini-logo" aria-hidden="true"></div>
-        <div>SAPH-AI</div>
-      </div>
+      <div class="brand">SAPH-AI</div>
 
       <nav class="nav" aria-label="Primary navigation">
         <a href="#about">About</a>
@@ -467,11 +434,7 @@
   <main class="container">
     <section class="hero-wrap">
       <div class="hero-banner">
-        <div class="hero-grid">
-          <div class="hero-logo-area">
-            <img src="images/cui.png" class="hero-logo" alt="CUI 2026 logo" />
-          </div>
-
+        <div class="hero-content">
           <div class="hero-text">
             <h1>SAPH-AI</h1>
             <p class="tagline">Security, Agency, Privacy of Human-AI</p>
